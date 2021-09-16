@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 
 import Home from './Home';
-import Conn from './Conn';
+import Maria from './MatiaContainer';
 import NotFound from './NotFound';
 
 function App() {
@@ -11,13 +11,13 @@ function App() {
       <header>
         <ol>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/conn">MariaDB</Link></li>
+          <li><Link to="/Maria">MariaDB</Link></li>
           <li><Link to="/notfound">Not found</Link></li>
         </ol>
       </header>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/conn" component={Conn} />
+        <Route path="/Maria" component={Maria} />
         <Route component={NotFound} />
       </Switch>
     </div>

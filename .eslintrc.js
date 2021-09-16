@@ -8,5 +8,7 @@ module.exports = {
   rules: {
     'linebreak-style': 0,
     'import/prefer-default-export': 'off',
+    'react/prop-types': 'off',
+    'react/no-unknown-property': 'off',
   },
 };
