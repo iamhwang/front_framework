@@ -19,3 +19,7 @@
 
 `테스트 코드 작성`
 - [JEST](https://velog.io/@xchdtk/TDD-Jest)
+
+`ERROR`
+- [ROUTER URL 접속 불가](https://velog.io/@yhe228/%EC%A3%BC%EC%86%8C%EC%B0%BD%EC%97%90-url-%EC%A7%81%EC%A0%91-%EC%9E%85%EB%A0%A5%EC%8B%9C-%EB%9D%BC%EC%9A%B0%ED%8C%85-%EC%95%88%EB%90%98%EB%8A%94-%EC%9D%B4%EC%8A%88)
+- [JEST RENDER 실패](https://www.npmjs.com/package/jest-environment-jsdom-global)
