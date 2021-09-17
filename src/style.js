@@ -36,7 +36,7 @@ export const TopBox = styled(WhiteBox)`
       padding: 7px;
       background-color: #fafafa;
       border: 0.5px solid rgb(219, 219, 219);
-      margin-top: 5px;
+      margin-top: 8px;
       box-sizing: border-box;
       &::placeholder {
         font-size: 12px;

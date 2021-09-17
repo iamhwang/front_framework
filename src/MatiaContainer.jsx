@@ -9,7 +9,7 @@ import {
 function MariaContainer() {
   const dispatch = useDispatch();
   function handleClick() {
-    dispatch(changeUserName('test'));
+
   }
 
   const { user: { no, id } } = useSelector((state) => ({

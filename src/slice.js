@@ -1,22 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import {
+  requestLoginAPI,
+} from './services/api';
+
 const initialState = {
-  users: [
-    { no: 2, id: 'iam2' },
-    { no: 3, id: 'iam3' },
-    { no: 4, id: 'iam4' },
-  ],
-  user: { no: 1, id: 'iamhwangggg' },
+  loginFields: {
+    id: '',
+    password: 'sadf',
+  },
+  accessToken: '',
 };
 
 const reducers = {
-  changeUserName(state, { payload: id }) {
+  changeLoginFields(state, { payload: { name, value } }) {
     return {
       ...state,
-      user: {
-        ...state.user,
-        id,
+      loginFields: {
+        ...state.loginFields,
+        [name]: value,
       },
+    };
+  },
+  setAccessToken(state, { payload: { accessToken } }) {
+    return {
+      ...state,
+      accessToken,
     };
   },
 };
@@ -28,7 +37,16 @@ const { actions, reducer } = createSlice({
 });
 
 export const {
-  changeUserName,
+  changeLoginFields,
+  setAccessToken,
 } = actions;
+
+export function fetchRequestLogin() {
+  return async (dispatch, getState) => {
+    const { loginFields: { id, password } } = getState();
+    const accessToken = await requestLoginAPI({ id, password });
+    dispatch(setAccessToken({ accessToken }));
+  };
+}
 
 export default reducer;
