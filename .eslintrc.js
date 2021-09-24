@@ -5,7 +5,10 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ['airbnb'],
+  extends: [
+    'airbnb',
+    'plugin:cypress/recommended',
+  ],
   rules: {
     'linebreak-style': 0,
     'import/prefer-default-export': 'off',

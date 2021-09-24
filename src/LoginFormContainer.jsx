@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import LogoutPage from './LogoutPage';
+import HomeContainer from './HomeContainer';
 import LoginPage from './LoginPage';
 
 import { changeLoginFields, fetchRequestLogin, setAccessToken } from './slice';
@@ -27,7 +27,7 @@ export default function LoginFormContainer() {
   return (
     <>
       { accessToken
-        ? <LogoutPage onClick={handleClickLogoutButton} />
+        ? <HomeContainer onClick={handleClickLogoutButton} />
         : <LoginPage onChange={handleChangeLoginFields} onClick={handleClickLoginButton} />}
     </>
   );

@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import {
+  requestMariaDB,
   requestLoginAPI,
 } from './services/api';
 
@@ -10,6 +11,10 @@ const initialState = {
     password: 'sadf',
   },
   accessToken: '',
+  user: {
+    no: '',
+    id: '',
+  },
 };
 
 const reducers = {
@@ -41,10 +46,17 @@ export const {
   setAccessToken,
 } = actions;
 
+export function fetchRequestMariaDB() {
+  return async (dispatch) => {
+    await requestMariaDB();
+    dispatch(setAccessToken(''));
+  };
+}
+
 export function fetchRequestLogin() {
   return async (dispatch, getState) => {
     const { loginFields: { id, password } } = getState();
-    const accessToken = await requestLoginAPI({ id, password });
+    const { accessToken } = await requestLoginAPI({ id, password });
     dispatch(setAccessToken({ accessToken }));
   };
 }
