@@ -8,7 +8,7 @@ import {
 const initialState = {
   loginFields: {
     id: '',
-    password: 'sadf',
+    password: '',
   },
   accessToken: '',
   user: {
@@ -49,7 +49,7 @@ export const {
 export function fetchRequestMariaDB() {
   return async (dispatch) => {
     await requestMariaDB();
-    dispatch(setAccessToken(''));
+    //dispatch(setAccessToken(''));
   };
 }
 
