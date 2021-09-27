@@ -8,7 +8,7 @@ import App from './App';
 
 jest.mock('react-redux');
 
-describe('render App.jsx', () => {
+describe('App.jsx 렌더링되면', () => {
   beforeEach(() => {
     const dispatch = jest.fn();
     dispatch.mockClear();
@@ -31,10 +31,11 @@ describe('render App.jsx', () => {
       </MemoryRouter>,
     );
   }
+  context('URL이 / 라면', () => {
+    it('화면에 GROUPWARE 글자가 보인다', () => {
+      const { getByText } = renderApp({ path: '/' });
 
-  it('path: /', () => {
-    const { getByText } = renderApp({ path: '/' });
-
-    expect(getByText(/GROUPWARE/)).not.toBeNull();
+      expect(getByText(/GROUPWARE/)).not.toBeNull();
+    });
   });
 });

@@ -23,6 +23,7 @@
 
 `테스트 코드 작성`
 - [UNIT 테스트 : JEST](https://velog.io/@xchdtk/TDD-Jest)
+- [Describe - Context - It](https://webcache.googleusercontent.com/search?q=cache:feLRUwh1yTgJ:https://johngrib.github.io/wiki/junit5-nested/+&cd=2&hl=ko&ct=clnk&gl=kr)
 - [E2E 테스트 : CYPRESS](https://velog.io/@_woogie/E2E%ED%85%8C%EC%8A%A4%ED%8A%B8-with-Cypress)
 - [CYPRESS, 명령어](https://docs.cypress.io/api/commands/and#Chainers)
 
@@ -35,6 +36,7 @@
 - [JEST RENDER 실패](https://www.npmjs.com/package/jest-environment-jsdom-global)
 - [GIT ADD . CRLF](https://dabo-dev.tistory.com/13)
 - [CYPRESS, library or dependency.](https://github.com/cypress-io/cypress/issues/7616)
+- [expect(..).. is not a function](https://github.com/testing-library/react-testing-library/issues/379)
 
 `Q`
 - CSS IN JS 일 때, 디자이너와 협업하는 법?
