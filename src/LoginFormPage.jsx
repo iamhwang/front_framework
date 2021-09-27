@@ -22,12 +22,14 @@ export default function LoginFormPage({ onChange, onClick }) {
             <input
               type="Text"
               name="id"
-              placeholder="Username"
+              id="username"
+              placeholder="username"
               onChange={handleChange}
             />
             <input
               type="Text"
               name="password"
+              id="password"
               placeholder="Password"
               onChange={handleChange}
             />

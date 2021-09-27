@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import LoginPage from './LoginPage';
 
+jest.mock('react-redux');
+
 describe('LoginFormContainer 렌더링될 때', () => {
   const dispatch = jest.fn();
   useDispatch.mockImplementation(() => dispatch);
@@ -22,9 +24,7 @@ describe('LoginFormContainer 렌더링될 때', () => {
     });
 
     it('LogoutFormContainer 렌더링된다', () => {
-      const { container } = render((
-        <LoginPage />
-      ));
+      const { container } = render(<LoginPage />);
 
       expect(container).toHaveTextContent('PROFILE');
     });
@@ -40,9 +40,7 @@ describe('LoginFormContainer 렌더링될 때', () => {
     });
 
     it('LoginFormContainer 렌더링된다', () => {
-      const { container } = render((
-        <LoginPage />
-      ));
+      const { container } = render(<LoginPage />);
 
       expect(container).toHaveTextContent('GROUPWARE');
     });

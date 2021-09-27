@@ -47,9 +47,8 @@ export const {
 } = actions;
 
 export function fetchRequestMariaDB() {
-  return async (dispatch) => {
+  return async () => {
     await requestMariaDB();
-    //dispatch(setAccessToken(''));
   };
 }
 
