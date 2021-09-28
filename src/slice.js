@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import {
-  requestMariaDB,
   requestLoginAPI,
 } from './services/api';
 
@@ -10,11 +9,10 @@ const initialState = {
     id: '',
     password: '',
   },
-  accessToken: '',
-  user: {
-    no: '',
+  loginUser: {
     id: '',
   },
+  accessToken: '',
 };
 
 const reducers = {
@@ -33,6 +31,15 @@ const reducers = {
       accessToken,
     };
   },
+  setLoginUser(state, { payload: { id } }) {
+    return {
+      ...state,
+      loginUser: {
+        ...state.loginUser,
+        id,
+      },
+    };
+  },
 };
 
 const { actions, reducer } = createSlice({
@@ -44,19 +51,15 @@ const { actions, reducer } = createSlice({
 export const {
   changeLoginFields,
   setAccessToken,
+  setLoginUser,
 } = actions;
-
-export function fetchRequestMariaDB() {
-  return async () => {
-    await requestMariaDB();
-  };
-}
 
 export function fetchRequestLogin() {
   return async (dispatch, getState) => {
     const { loginFields: { id, password } } = getState();
-    const { accessToken } = await requestLoginAPI({ id, password });
-    dispatch(setAccessToken({ accessToken }));
+    const data = await requestLoginAPI({ id, password });
+    dispatch(setLoginUser({ id: data.id }));
+    dispatch(setAccessToken({ accessToken: data.accessToken }));
   };
 }
 

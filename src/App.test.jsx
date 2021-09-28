@@ -15,10 +15,6 @@ describe('App.jsx 렌더링되면', () => {
 
     useSelector.mockImplementation((selector) => selector({
       accessToken: '',
-      user: {
-        no: '',
-        id: '',
-      },
     }));
 
     useDispatch.mockImplementation(() => dispatch);
@@ -36,6 +32,14 @@ describe('App.jsx 렌더링되면', () => {
       const { getByText } = renderApp({ path: '/' });
 
       expect(getByText(/GROUPWARE/)).not.toBeNull();
+    });
+  });
+
+  context('URL이 /notfound 라면', () => {
+    it('화면에 GROUPWARE 글자가 보인다', () => {
+      const { getByText } = renderApp({ path: '/notfound' });
+
+      expect(getByText(/NOT FOUND/)).not.toBeNull();
     });
   });
 });

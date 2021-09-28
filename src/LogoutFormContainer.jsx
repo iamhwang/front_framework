@@ -1,11 +1,16 @@
 import React from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { setAccessToken } from './slice';
 
 import LogoutFormPage from './LogoutFormPage';
 
 export default function LogoutFormContainer() {
+  const { accessToken, id } = useSelector((state) => ({
+    accessToken: state.accessToken,
+    id: state.loginUser.id,
+  }));
+
   const dispatch = useDispatch();
 
   function handleClickLogoutButton() {
@@ -15,6 +20,8 @@ export default function LogoutFormContainer() {
   return (
     <>
       <LogoutFormPage
+        id={id}
+        accessToken={accessToken}
         onClick={handleClickLogoutButton}
       />
     </>

@@ -16,8 +16,7 @@ describe('LoginFormContainer 렌더링될 때', () => {
       dispatch.mockClear();
       useSelector.mockImplementation((selector) => selector({
         accessToken: 'accessToken',
-        user: {
-          no: '',
+        loginUser: {
           id: '',
         },
       }));
