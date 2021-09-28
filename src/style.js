@@ -42,8 +42,8 @@ export const TopBox = styled(WhiteBox)`
         font-size: 12px;
       }
     }
-    h5 {
-      margin: 8px;
+    label {
+      display: none;
     }
     button {
       font-weight: 600;

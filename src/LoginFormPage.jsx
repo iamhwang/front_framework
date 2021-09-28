@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 
 import {
@@ -19,6 +20,9 @@ export default function LoginFormPage({ onChange, onClick }) {
         <TopBox>
           <h1>K-concept</h1>
           <form>
+            <label htmlFor="username">
+              ID
+            </label>
             <input
               type="Text"
               name="id"
@@ -26,6 +30,9 @@ export default function LoginFormPage({ onChange, onClick }) {
               placeholder="username"
               onChange={handleChange}
             />
+            <label htmlFor="Password">
+              Password
+            </label>
             <input
               type="Text"
               name="password"

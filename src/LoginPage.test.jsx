@@ -17,8 +17,8 @@ describe('LoginFormContainer 렌더링될 때', () => {
       useSelector.mockImplementation((selector) => selector({
         accessToken: 'accessToken',
         user: {
-          no: '1',
-          id: '2',
+          no: '',
+          id: '',
         },
       }));
     });

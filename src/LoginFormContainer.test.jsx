@@ -25,27 +25,38 @@ describe('LoginFormContainer 렌더링된다', () => {
     it('로그인 버튼이 보인다', () => {
       const { container } = render(<LoginFormContainer />);
 
-      expect(container).toHaveTextContent('K-conceptLogin GROUPWARE');
+      expect(container).toHaveTextContent('K-conceptIDPasswordLogin GROUPWARE');
     });
   });
 
   context('username, password 입력한다', () => {
     it('store loginfields 데이터가 바뀐다', () => {
-      const { getByPlaceholderText } = render((
+      const { getByLabelText } = render((
         <LoginFormContainer />
       ));
 
-      fireEvent.change(getByPlaceholderText('username'), {
-        target: { value: 'aaaa' },
+      fireEvent.change(getByLabelText('ID'), {
+        target: { value: 'iamtestID' },
       });
 
       expect(dispatch).toBeCalledWith({
         type: 'k-concept/changeLoginFields',
         payload: {
           name: 'id',
-          value: 'aaaa',
+          value: 'iamtestID',
         },
       });
+    });
+
+    it('로그인 버튼을 클릭한다', () => {
+      const { container, getByText } = render((
+        <LoginFormContainer />
+      ));
+
+      expect(container).toHaveTextContent('Login');
+
+      fireEvent.click(getByText('Login'));
+      expect(dispatch).toBeCalledTimes(1);
     });
   });
 });
