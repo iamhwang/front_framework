@@ -28,7 +28,7 @@
 - [styled-component](https://dkje.github.io/2020/10/13/StyledComponents/)
 - [styled-component 장단점](https://developer-adam.tistory.com/23)
 
-## 기타
+## etc
 `ERROR`
 > [ROUTER URL 접속 불가](https://velog.io/@yhe228/%EC%A3%BC%EC%86%8C%EC%B0%BD%EC%97%90-url-%EC%A7%81%EC%A0%91-%EC%9E%85%EB%A0%A5%EC%8B%9C-%EB%9D%BC%EC%9A%B0%ED%8C%85-%EC%95%88%EB%90%98%EB%8A%94-%EC%9D%B4%EC%8A%88)
 >
@@ -40,7 +40,7 @@
 >
 > [expect(..).. is not a function](https://github.com/testing-library/react-testing-library/issues/379)
 
-`Q`
+`고민`
 > CSS IN JS 일 때, 디자이너와 협업하는 법?
 >
 > 파일(container, page)을 어떻게 분류하면 좋을까?
