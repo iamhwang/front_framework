@@ -36,6 +36,7 @@ export default function LogoutFormPage({ id, accessToken, onClick }) {
               disabled
             />
             <button
+              id="logoutButton"
               type="button"
               onClick={onClick}
             >

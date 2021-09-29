@@ -5,15 +5,9 @@ describe('App Test', () => {
       .should('contain', 'Login');
   });
 
-  it('Route : /MariaDB', () => {
-    cy.visit('/MariaDB')
-      .get('button')
-      .should('contain', 'MariaBD');
-  });
-
   it('Route : /not found url', () => {
     cy.visit('/notfundurl')
-      .get('p')
-      .should('contain', 'Hello? NotFound!');
+      .get('span')
+      .should('contain', 'NOT FOUND');
   });
 });

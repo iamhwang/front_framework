@@ -1,11 +1,13 @@
 describe('App Test', () => {
   it('login and logout', () => {
     cy.visit('/')
-      .contains('Login').click()
-      .get('p')
-      .should('contain', 'Hello,')
+      .get('#username').type('iamTEST')
       .get('button')
-      .contains('Logout')
+      .contains('Login')
+      .click()
+      .get('input')
+      .should('value', 'iamTEST')
+      .get('#logoutButton')
       .click()
       .get('h1')
       .should('contain', 'K-concept');
