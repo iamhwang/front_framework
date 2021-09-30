@@ -9,7 +9,8 @@
 
 ## 개발환경 설정
 - [REACT](https://reactjs-kr.firebaseapp.com/tutorial/tutorial.html)
-- [WEBPACK, BABEL](https://velog.io/@rjsdnql123/CRA%EC%97%86%EC%9D%B4-React-Babel-Webpack%EC%84%B8%ED%8C%85%EA%B3%BC-%ED%81%AC%EB%A1%9C%EC%8A%A4-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A7%95)
+- [WEBPACK](https://velog.io/@jeff0720/React-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD%EC%9D%84-%EA%B5%AC%EC%B6%95%ED%95%98%EB%A9%B4%EC%84%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-Webpack-%EA%B8%B0%EC%B4%88)
+- [babel](https://ljs0705.medium.com/babel-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-a1d0e6bd021a)
 - [ESLint](https://velog.io/@velopert/eslint-and-prettier-in-react)
 
 ## REACT 데이터 관리
