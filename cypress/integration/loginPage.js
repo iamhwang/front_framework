@@ -1,12 +1,17 @@
 describe('App Test', () => {
   it('login and logout', () => {
     cy.visit('/')
-      .get('#username').type('iamTEST')
+      .get('#username')
+      .type('iamTEST')
+      .get('#password')
+      .type('password')
       .get('button')
       .contains('Login')
       .click()
       .get('input')
       .should('value', 'iamTEST')
+      .get('h1')
+      .should('contain', 'PROFILE')
       .get('#logoutButton')
       .click()
       .get('h1')

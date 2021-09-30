@@ -12,7 +12,6 @@ export default function LogoutFormContainer() {
   }));
 
   const dispatch = useDispatch();
-
   function handleClickLogoutButton() {
     dispatch(setAccessToken(''));
   }

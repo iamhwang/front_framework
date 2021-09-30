@@ -17,7 +17,7 @@ describe('LoginFormContainer 렌더링될 때', () => {
       useSelector.mockImplementation((selector) => selector({
         accessToken: 'accessToken',
         loginUser: {
-          id: '',
+          id: 'iamTest',
         },
       }));
     });
@@ -32,7 +32,6 @@ describe('LoginFormContainer 렌더링될 때', () => {
   context('로그인 토큰이 존재하지 않으면', () => {
     beforeEach(() => {
       dispatch.mockClear();
-
       useSelector.mockImplementation((selector) => selector({
         accessToken: '',
       }));

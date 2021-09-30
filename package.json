@@ -19,6 +19,7 @@
     "start": "webpack-dev-server",
     "build": "react-scripts build",
     "test:unit": "jest",
+    "test:unit:loginPage": "jest LoginPage.test.jsx",
     "test:e2e": "cypress open",
     "cypress": "cypress run",
     "eject": "react-scripts eject"
