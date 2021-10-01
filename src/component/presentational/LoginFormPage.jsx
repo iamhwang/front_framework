@@ -6,7 +6,7 @@ import {
   Wrapper,
   TopBox,
   Separator,
-} from '../../style';
+} from '../../css/style';
 
 export default function LoginFormPage({ onChange, onClick }) {
   function handleChange(event) {

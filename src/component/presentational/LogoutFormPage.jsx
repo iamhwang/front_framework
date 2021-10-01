@@ -5,7 +5,7 @@ import {
   Container,
   Wrapper,
   TopBox,
-} from '../../style';
+} from '../../css/style';
 
 export default function LogoutFormPage({ id, accessToken, onClick }) {
   return (

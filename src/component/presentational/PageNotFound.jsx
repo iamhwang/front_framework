@@ -4,7 +4,7 @@ import {
   Container,
   Wrapper,
   Separator,
-} from '../../style';
+} from '../../css/style';
 
 function PageNotFound() {
   return (
