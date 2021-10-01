@@ -4,9 +4,9 @@ import {
   Container,
   Wrapper,
   Separator,
-} from './style';
+} from '../../style';
 
-function NotFound() {
+function PageNotFound() {
   return (
     <Container>
       <Wrapper>
@@ -20,4 +20,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default PageNotFound;

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setAccessToken } from './slice';
+import { setAccessToken } from '../../redux/slice';
 
-import LogoutFormPage from './LogoutFormPage';
+import LogoutFormPage from '../presentational/LogoutFormPage';
 
 export default function LogoutFormContainer() {
   const { accessToken, id } = useSelector((state) => ({

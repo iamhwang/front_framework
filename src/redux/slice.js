@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import {
   requestLoginAPI,
-} from './services/api';
+} from '../services/api';
 
 const initialState = {
   loginFields: {

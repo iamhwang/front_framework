@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { changeLoginFields, fetchRequestLogin } from './slice';
+import { changeLoginFields, fetchRequestLogin } from '../../redux/slice';
 
-import LoginFormPage from './LoginFormPage';
+import LoginFormPage from '../presentational/LoginFormPage';
 
 export default function LoginFormContainer() {
   const dispatch = useDispatch();

@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './App';
+import App from './route/App';
 
-import store from './store';
+import store from './redux/store';
 
 ReactDOM.render(
   (

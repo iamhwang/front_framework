@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import PageNotFound from './PageNotFound';
-import Login from './LoginPage';
+import Login from '../component/container/LoginPageContainer';
+import PageNotFound from '../component/presentational/PageNotFound';
 
 export default function App() {
   return (
