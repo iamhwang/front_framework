@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Login from '../component/container/LoginPageContainer';
+import Login from '../component/container/LoginContainer';
 import PageNotFound from '../component/presentational/PageNotFound';
 
 export default function App() {

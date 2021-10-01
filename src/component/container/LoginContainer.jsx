@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import LogoutFormContainer from './LogoutFormContainer';
 import LoginFormContainer from './LoginFormContainer';
 
-export default function LoginPageContainer() {
+export default function LoginContainer() {
   const { accessToken } = useSelector((state) => ({
     accessToken: state.accessToken,
   }));

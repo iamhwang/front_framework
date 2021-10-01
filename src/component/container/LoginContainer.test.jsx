@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import LoginPageContainer from './LoginPageContainer';
+import LoginContainer from './LoginContainer';
 
 jest.mock('react-redux');
 
@@ -23,7 +23,7 @@ describe('LoginFormContainer 렌더링될 때', () => {
     });
 
     it('LogoutFormContainer 렌더링된다', () => {
-      const { container } = render(<LoginPageContainer />);
+      const { container } = render(<LoginContainer />);
 
       expect(container).toHaveTextContent('PROFILE');
     });
@@ -38,7 +38,7 @@ describe('LoginFormContainer 렌더링될 때', () => {
     });
 
     it('LoginFormContainer 렌더링된다', () => {
-      const { container } = render(<LoginPageContainer />);
+      const { container } = render(<LoginContainer />);
 
       expect(container).toHaveTextContent('GROUPWARE');
     });
