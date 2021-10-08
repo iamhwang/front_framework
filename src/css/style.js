@@ -6,9 +6,11 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  display: -webkit-box;
 `;
 
 export const Wrapper = styled.div`
+  //display: flex;
   max-width: 350px;
   width: 100%;
 `;
@@ -70,4 +72,16 @@ export const Separator = styled.div`
     font-weight: 600;
     color: #8e8e8e;
   }
+`;
+
+export const Line = styled.div`
+  width: 200px;
+  height: 70px;
+  display: flex;
+`;
+
+export const KConcept = styled.div`
+  width: 352px;
+  height: 306px;
+  background: #3b5998;
 `;

@@ -6,9 +6,11 @@ import {
   Wrapper,
   TopBox,
   Separator,
+  Line,
+  KConcept,
 } from '../../css/style';
 
-export default function LoginFormPage({ onChange, onClick }) {
+export default function LoginFormPage({ onChange, onClick, onCreate }) {
   function handleChange(event) {
     const { target: { name, value } } = event;
     onChange({ name, value });
@@ -16,6 +18,7 @@ export default function LoginFormPage({ onChange, onClick }) {
 
   return (
     <Container>
+      <KConcept />
       <Wrapper>
         <TopBox>
           <h1>K-concept</h1>
@@ -40,12 +43,20 @@ export default function LoginFormPage({ onChange, onClick }) {
               placeholder="Password"
               onChange={handleChange}
             />
-            <button
-              type="button"
-              onClick={onClick}
-            >
-              Login
-            </button>
+            <Line>
+              <button
+                type="button"
+                onClick={onClick}
+              >
+                Login
+              </button>
+              <button
+                type="button"
+                onClick={onCreate}
+              >
+                Create
+              </button>
+            </Line>
           </form>
           <Separator>
             <div>{' '}</div>

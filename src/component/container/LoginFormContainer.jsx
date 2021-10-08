@@ -1,7 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { changeLoginFields, fetchRequestLogin } from '../../redux/slice';
+import {
+  changeLoginFields,
+  fetchRequestLogin,
+  fetchRequestCreate,
+} from '../../redux/slice';
 
 import LoginFormPage from '../presentational/LoginFormPage';
 
@@ -15,11 +19,16 @@ export default function LoginFormContainer() {
     dispatch(fetchRequestLogin());
   }
 
+  function handleClickCreateButton() {
+    dispatch(fetchRequestCreate());
+  }
+
   return (
     <>
       <LoginFormPage
         onChange={handleChangeLoginFields}
         onClick={handleClickLoginButton}
+        onCreate={handleClickCreateButton}
       />
     </>
   );
