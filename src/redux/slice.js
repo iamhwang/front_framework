@@ -106,8 +106,8 @@ export function fetchRequestDelete() {
 
 export function fetchRequestMemo() {
   return async (dispatch, getState) => {
-    const { memo } = getState();
-    const data = await requestMemoAPI({ memo });
+    const { loginUser: { id }, memo } = getState();
+    const data = await requestMemoAPI({ id, memo });
     return data;
   };
 }

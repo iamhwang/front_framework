@@ -50,8 +50,7 @@ export async function requestDeleteAPI({ id }) {
   return checkAPIResponse(data);
 }
 
-export async function requestMemoAPI({ memo }) {
-  console.log(memo);
+export async function requestMemoAPI({ id, memo }) {
   const url = 'http://localhost:3000/api/memo/createMemo';
   const response = await fetch(url, {
     method: 'POST',
@@ -59,6 +58,7 @@ export async function requestMemoAPI({ memo }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
+      id,
       memo,
     }),
   });
