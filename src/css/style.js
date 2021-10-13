@@ -80,7 +80,7 @@ export const Line = styled.div`
   display: flex;
 `;
 
-export const KConcept = styled.div`
+export const BlueBox = styled.div`
   width: 352px;
   height: 306px;
   background: #3b5998;

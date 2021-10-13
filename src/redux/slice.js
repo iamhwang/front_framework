@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+import initialState from './state';
 import {
   requestUserLoginAPI,
   requestUserCreateAPI,
@@ -8,19 +8,6 @@ import {
   requestMemosGetAPI,
   requestMemoDeleteAPI,
 } from '../services/api';
-
-const initialState = {
-  loginFields: {
-    id: '',
-    password: '',
-  },
-  loginUser: {
-    id: '',
-  },
-  accessToken: '',
-  memo: '',
-  memos: [],
-};
 
 const reducers = {
   changeLoginFields(state, { payload: { name, value } }) {
@@ -42,20 +29,22 @@ const reducers = {
       loginFields: '',
     };
   },
-  setAccessToken(state, { payload: { accessToken } }) {
-    return {
-      ...state,
-      accessToken,
-    };
-  },
-  setLoginUser(state, { payload: { id } }) {
+  setUserLogin(state, { payload: { id, no, accessToken } }) {
     return {
       ...state,
       loginUser: {
         ...state.loginUser,
         id,
+        no,
+        accessToken,
       },
       loginFields: '',
+    };
+  },
+  setUserLogout(state) {
+    return {
+      ...state,
+      loginUser: '',
     };
   },
   setMemo(state, { payload: { memo } }) {
@@ -81,18 +70,17 @@ const { actions, reducer } = createSlice({
 export const {
   changeLoginFields,
   deleteUser,
-  setAccessToken,
-  setLoginUser,
+  setUserLogin,
+  setUserLogout,
   setMemo,
   setMemos,
 } = actions;
 
 export function requestUserLogin() {
   return async (dispatch, getState) => {
-    const { loginFields: { id, password } } = getState();
-    const data = await requestUserLoginAPI({ id, password });
-    dispatch(setLoginUser({ id: data.id }));
-    dispatch(setAccessToken({ accessToken: data.accessToken }));
+    const { loginFields } = getState();
+    const { id, no, accessToken } = await requestUserLoginAPI(loginFields);
+    dispatch(setUserLogin({ id, no, accessToken }));
   };
 }
 
@@ -108,8 +96,7 @@ export function requestUserDelete() {
   return async (dispatch, getState) => {
     const { loginUser: { id } } = getState();
     const data = await requestUserDeleteAPI({ id });
-    dispatch(setLoginUser({ id: '' }));
-    dispatch(setAccessToken({ accessToken: '' }));
+    dispatch(setUserLogout());
     return data;
   };
 }

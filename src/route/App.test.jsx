@@ -14,7 +14,9 @@ describe('App.jsx 렌더링되면', () => {
     dispatch.mockClear();
 
     useSelector.mockImplementation((selector) => selector({
-      accessToken: '',
+      loginUser: {
+        accessToken: '',
+      },
     }));
 
     useDispatch.mockImplementation(() => dispatch);

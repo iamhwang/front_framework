@@ -26,12 +26,12 @@ describe('LoginFormContainer 렌더링된다', () => {
     it('로그아웃 버튼이 보인다', () => {
       const { container } = render(<LogoutFormContainer />);
 
-      expect(container).toHaveTextContent('PROFILEIDTOKENLogout');
+      expect(container).toHaveTextContent('PROFILEIDTOKENmemoLogoutDelete GROUPWARE');
     });
   });
 
   context('로그아웃 버튼을 클릭한다', () => {
-    it('setAccessToken가 실행된다', () => {
+    it('setUserLogout 실행된다', () => {
       const { getByText } = render(
         <LogoutFormContainer
           onClick={handleClickLogoutButton}
@@ -39,10 +39,8 @@ describe('LoginFormContainer 렌더링된다', () => {
       );
 
       fireEvent.click(getByText('Logout'));
-      expect(dispatch).toBeCalledTimes(1);
       expect(dispatch).toBeCalledWith({
-        type: 'k-concept/setAccessToken',
-        payload: '',
+        type: 'k-concept/setUserLogout',
       });
     });
   });

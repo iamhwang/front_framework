@@ -7,7 +7,7 @@ import {
   TopBox,
   Separator,
   Line,
-  KConcept,
+  BlueBox,
 } from '../../css/style';
 
 export default function LoginFormPage({ onChange, onClick, onCreate }) {
@@ -18,7 +18,7 @@ export default function LoginFormPage({ onChange, onClick, onCreate }) {
 
   return (
     <Container>
-      <KConcept />
+      <BlueBox />
       <Wrapper>
         <TopBox>
           <h1>K-concept</h1>

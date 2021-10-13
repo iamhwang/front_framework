@@ -7,7 +7,7 @@ import LoginFormContainer from './LoginFormContainer';
 
 export default function LoginContainer() {
   const { accessToken } = useSelector((state) => ({
-    accessToken: state.accessToken,
+    accessToken: state.loginUser.accessToken,
   }));
 
   return (

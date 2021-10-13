@@ -2,7 +2,7 @@ describe('App Test', () => {
   it('login and logout', () => {
     cy.visit('/')
       .get('#username')
-      .type('iamTEST')
+      .type('iamE2E')
       .get('#password')
       .type('password')
       .get('button')

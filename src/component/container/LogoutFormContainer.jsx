@@ -2,9 +2,9 @@ import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  setAccessToken,
-  requestUserDelete,
+  setUserLogout,
   setMemo,
+  requestUserDelete,
   requestMemoCreate,
 } from '../../redux/slice';
 
@@ -22,7 +22,7 @@ export default function LogoutFormContainer() {
   }
 
   function handleClickLogoutButton() {
-    dispatch(setAccessToken(''));
+    dispatch(setUserLogout());
   }
 
   function handleClickDeleteButton() {
