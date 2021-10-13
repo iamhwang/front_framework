@@ -9,7 +9,7 @@ describe('App Test', () => {
       .contains('Login')
       .click()
       .get('input')
-      .should('value', 'iamTEST')
+      .should('value', 'iamE2E')
       .get('h1')
       .should('contain', 'PROFILE')
       .get('#logoutButton')

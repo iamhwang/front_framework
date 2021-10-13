@@ -40,6 +40,7 @@ export default function LogoutFormPage({
                 TOKEN
               </label>
               <input
+                id="memo"
                 type="Text"
                 name="memo"
                 value={memo}
@@ -48,6 +49,7 @@ export default function LogoutFormPage({
               />
               <Line>
                 <button
+                  id="memoButton"
                   type="button"
                   onClick={onMemo}
                 >
