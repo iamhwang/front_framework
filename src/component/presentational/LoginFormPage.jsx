@@ -37,7 +37,7 @@ export default function LoginFormPage({ onChange, onClick, onCreate }) {
               Password
             </label>
             <input
-              type="Text"
+              type="password"
               name="password"
               id="password"
               placeholder="Password"

@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 
 import {
   changeLoginFields,
-  fetchRequestLogin,
-  fetchRequestCreate,
+  requestUserLogin,
+  requestUserCreate,
 } from '../../redux/slice';
 
 import LoginFormPage from '../presentational/LoginFormPage';
@@ -16,11 +16,11 @@ export default function LoginFormContainer() {
   }
 
   function handleClickLoginButton() {
-    dispatch(fetchRequestLogin());
+    dispatch(requestUserLogin());
   }
 
   function handleClickCreateButton() {
-    dispatch(fetchRequestCreate());
+    dispatch(requestUserCreate());
   }
 
   return (

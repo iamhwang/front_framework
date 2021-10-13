@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 export default function checkAPIResponse(data) {
-  if (!data.status) {
+  if (data.status === false) {
     alert(data.msg);
   }
 

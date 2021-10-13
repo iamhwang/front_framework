@@ -85,3 +85,25 @@ export const KConcept = styled.div`
   height: 306px;
   background: #3b5998;
 `;
+
+export const Memo = styled.div`
+  background: white;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  height: 40px;
+  P {
+    margin-left: 10px;
+    line-height: 40px;
+  }
+`;
+
+export const MemoX = styled.button`
+  border: 0;
+  outline: 0;
+  color: #dc143c;
+  float: right;
+  line-height: 40px;
+  background: transparent;
+  margin-right: 10px;
+`;

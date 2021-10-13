@@ -25,7 +25,7 @@ describe('LoginFormContainer 렌더링된다', () => {
     it('로그인 버튼이 보인다', () => {
       const { container } = render(<LoginFormContainer />);
 
-      expect(container).toHaveTextContent('K-conceptIDPasswordLogin GROUPWARE');
+      expect(container).toHaveTextContent('K-conceptIDPasswordLoginCreate GROUPWARE');
     });
   });
 

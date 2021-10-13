@@ -3,9 +3,9 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   setAccessToken,
-  fetchRequestDelete,
+  requestUserDelete,
   setMemo,
-  fetchRequestMemo,
+  requestMemoCreate,
 } from '../../redux/slice';
 
 import LogoutFormPage from '../presentational/LogoutFormPage';
@@ -18,7 +18,7 @@ export default function LogoutFormContainer() {
 
   const dispatch = useDispatch();
   function handleClickMemoButton() {
-    dispatch(fetchRequestMemo());
+    dispatch(requestMemoCreate());
   }
 
   function handleClickLogoutButton() {
@@ -26,7 +26,7 @@ export default function LogoutFormContainer() {
   }
 
   function handleClickDeleteButton() {
-    dispatch(fetchRequestDelete());
+    dispatch(requestUserDelete());
   }
 
   function handleChangeMemo({ value }) {

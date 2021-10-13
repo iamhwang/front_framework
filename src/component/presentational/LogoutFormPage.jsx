@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import MemosContainer from '../container/MemosContainer';
 
 import {
   Container,
-  KConcept,
   Wrapper,
   TopBox,
   Separator,
@@ -11,7 +11,7 @@ import {
 } from '../../css/style';
 
 export default function LogoutFormPage({
-  id, onChange, onMemo, onClick, onDelete,
+  id, memo, onChange, onMemo, onClick, onDelete,
 }) {
   function handleChange(event) {
     const { target: { value } } = event;
@@ -42,6 +42,7 @@ export default function LogoutFormPage({
               <input
                 type="Text"
                 name="memo"
+                value={memo}
                 onChange={handleChange}
                 placeholder="메모를 입력하세요."
               />
@@ -74,7 +75,7 @@ export default function LogoutFormPage({
             </Separator>
           </TopBox>
         </Wrapper>
-        <KConcept />
+        <MemosContainer />
       </Container>
     </>
   );

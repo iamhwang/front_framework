@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import {
-  requestLoginAPI,
-  requestCreateAPI,
-  requestDeleteAPI,
-  requestMemoAPI,
+  requestUserLoginAPI,
+  requestUserCreateAPI,
+  requestUserDeleteAPI,
+  requestMemoCreateAPI,
+  requestMemosGetAPI,
+  requestMemoDeleteAPI,
 } from '../services/api';
 
 const initialState = {
@@ -16,7 +18,8 @@ const initialState = {
     id: '',
   },
   accessToken: '',
-  memo: 'memo',
+  memo: '',
+  memos: [],
 };
 
 const reducers = {
@@ -27,6 +30,16 @@ const reducers = {
         ...state.loginFields,
         [name]: value,
       },
+    };
+  },
+  deleteUser(state, { payload: { id } }) {
+    return {
+      ...state,
+      loginUser: {
+        ...state.loginUser,
+        id,
+      },
+      loginFields: '',
     };
   },
   setAccessToken(state, { payload: { accessToken } }) {
@@ -45,20 +58,16 @@ const reducers = {
       loginFields: '',
     };
   },
-  deleteUser(state, { payload: { id } }) {
-    return {
-      ...state,
-      loginUser: {
-        ...state.loginUser,
-        id,
-      },
-      loginFields: '',
-    };
-  },
   setMemo(state, { payload: { memo } }) {
     return {
       ...state,
       memo,
+    };
+  },
+  setMemos(state, { payload: { memos } }) {
+    return {
+      ...state,
+      memos,
     };
   },
 };
@@ -71,43 +80,68 @@ const { actions, reducer } = createSlice({
 
 export const {
   changeLoginFields,
+  deleteUser,
   setAccessToken,
   setLoginUser,
-  deleteUser,
   setMemo,
+  setMemos,
 } = actions;
 
-export function fetchRequestLogin() {
+export function requestUserLogin() {
   return async (dispatch, getState) => {
     const { loginFields: { id, password } } = getState();
-    const data = await requestLoginAPI({ id, password });
+    const data = await requestUserLoginAPI({ id, password });
     dispatch(setLoginUser({ id: data.id }));
     dispatch(setAccessToken({ accessToken: data.accessToken }));
   };
 }
 
-export function fetchRequestCreate() {
+export function requestUserCreate() {
   return async (dispatch, getState) => {
     const { loginFields: { id, password } } = getState();
-    const data = await requestCreateAPI({ id, password });
+    const data = await requestUserCreateAPI({ id, password });
     return data;
   };
 }
 
-export function fetchRequestDelete() {
+export function requestUserDelete() {
   return async (dispatch, getState) => {
     const { loginUser: { id } } = getState();
-    const data = await requestDeleteAPI({ id });
+    const data = await requestUserDeleteAPI({ id });
     dispatch(setLoginUser({ id: '' }));
     dispatch(setAccessToken({ accessToken: '' }));
     return data;
   };
 }
 
-export function fetchRequestMemo() {
+export function requestMemoCreate() {
   return async (dispatch, getState) => {
     const { loginUser: { id }, memo } = getState();
-    const data = await requestMemoAPI({ id, memo });
+    const data = await requestMemoCreateAPI({ id, memo });
+    dispatch(setMemo({ memo: '' }));
+
+    const memos = await requestMemosGetAPI({ id });
+    dispatch(setMemos({ memos }));
+
+    return data;
+  };
+}
+
+export function requestMemoDelete({ no }) {
+  return async (dispatch) => {
+    const data = await requestMemoDeleteAPI({ no });
+
+    const memos = await requestMemosGetAPI({ id: 35 });
+    dispatch(setMemos({ memos }));
+    return data;
+  };
+}
+
+export function requestMemosInit() {
+  return async (dispatch, getState) => {
+    const { loginUser: { id } } = getState();
+    const data = await requestMemosGetAPI({ id });
+    dispatch(setMemos({ memos: data }));
     return data;
   };
 }

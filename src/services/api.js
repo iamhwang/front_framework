@@ -1,6 +1,6 @@
 import checkAPIResponse from '../util/checkAPIResponse';
 
-export async function requestLoginAPI({ id, password }) {
+export async function requestUserLoginAPI({ id, password }) {
   const url = 'http://localhost:3000/api/user/userLogin';
   const response = await fetch(url, {
     method: 'POST',
@@ -17,7 +17,7 @@ export async function requestLoginAPI({ id, password }) {
   return checkAPIResponse(data);
 }
 
-export async function requestCreateAPI({ id, password }) {
+export async function requestUserCreateAPI({ id, password }) {
   const url = 'http://localhost:3000/api/user/createUser';
   const response = await fetch(url, {
     method: 'POST',
@@ -34,7 +34,7 @@ export async function requestCreateAPI({ id, password }) {
   return checkAPIResponse(data);
 }
 
-export async function requestDeleteAPI({ id }) {
+export async function requestUserDeleteAPI({ id }) {
   const url = 'http://localhost:3000/api/user/deleteUser';
   const response = await fetch(url, {
     method: 'POST',
@@ -50,7 +50,7 @@ export async function requestDeleteAPI({ id }) {
   return checkAPIResponse(data);
 }
 
-export async function requestMemoAPI({ id, memo }) {
+export async function requestMemoCreateAPI({ id, memo }) {
   const url = 'http://localhost:3000/api/memo/createMemo';
   const response = await fetch(url, {
     method: 'POST',
@@ -60,6 +60,38 @@ export async function requestMemoAPI({ id, memo }) {
     body: JSON.stringify({
       id,
       memo,
+    }),
+  });
+
+  const data = await response.json();
+  return checkAPIResponse(data);
+}
+
+export async function requestMemosGetAPI({ id }) {
+  const url = 'http://localhost:3000/api/memo/getMemos';
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      id,
+    }),
+  });
+
+  const data = await response.json();
+  return checkAPIResponse(data);
+}
+
+export async function requestMemoDeleteAPI({ no }) {
+  const url = 'http://localhost:3000/api/memo/deleteMemo';
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      no,
     }),
   });
 
