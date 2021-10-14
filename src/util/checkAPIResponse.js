@@ -1,11 +1,15 @@
 /* eslint-disable no-alert */
-export default function checkAPIResponse(data) {
-  if (data.status === false) {
-    alert(data.msg);
+export default function checkAPIResponse({ statusCode, message, data }) {
+  if (statusCode === 400) {
+    alert(message);
   }
 
-  if (data.status && data.statusCode === 201) {
-    alert(data.msg);
+  if (statusCode === 101) {
+    alert(message);
+  }
+
+  if (statusCode === 110) {
+    alert(message);
   }
 
   return data;

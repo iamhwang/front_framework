@@ -1,13 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 import initialState from './state';
+
+import {
+  requestMemoCreateAPI,
+  requestMemosGetAPI,
+  requestMemoDeleteAPI,
+} from '../services/memoApi';
+
 import {
   requestUserLoginAPI,
   requestUserCreateAPI,
   requestUserDeleteAPI,
-  requestMemoCreateAPI,
-  requestMemosGetAPI,
-  requestMemoDeleteAPI,
-} from '../services/api';
+} from '../services/userApi';
 
 const reducers = {
   changeLoginFields(state, { payload: { name, value } }) {
@@ -103,11 +107,11 @@ export function requestUserDelete() {
 
 export function requestMemoCreate() {
   return async (dispatch, getState) => {
-    const { loginUser: { id }, memo } = getState();
-    const data = await requestMemoCreateAPI({ id, memo });
+    const { loginUser: { no }, memo } = getState();
+    const data = await requestMemoCreateAPI({ no, memo });
     dispatch(setMemo({ memo: '' }));
 
-    const memos = await requestMemosGetAPI({ id });
+    const memos = await requestMemosGetAPI({ no });
     dispatch(setMemos({ memos }));
 
     return data;
@@ -118,7 +122,7 @@ export function requestMemoDelete({ no }) {
   return async (dispatch) => {
     const data = await requestMemoDeleteAPI({ no });
 
-    const memos = await requestMemosGetAPI({ id: 35 });
+    const memos = await requestMemosGetAPI({ no });
     dispatch(setMemos({ memos }));
     return data;
   };
@@ -126,8 +130,8 @@ export function requestMemoDelete({ no }) {
 
 export function requestMemosInit() {
   return async (dispatch, getState) => {
-    const { loginUser: { id } } = getState();
-    const data = await requestMemosGetAPI({ id });
+    const { loginUser: { no } } = getState();
+    const data = await requestMemosGetAPI({ no });
     dispatch(setMemos({ memos: data }));
     return data;
   };

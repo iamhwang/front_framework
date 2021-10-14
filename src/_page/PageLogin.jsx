@@ -1,10 +1,10 @@
 import React from 'react';
-import Login from '../container/LoginContainer';
+import LoginContainer from '../component/container/LoginContainer';
 
 export default function PageLogin() {
   return (
     <>
-      <Login />
+      <LoginContainer />
     </>
   );
 }
