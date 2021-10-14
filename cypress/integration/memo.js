@@ -24,6 +24,13 @@ describe('App Test', () => {
       .contains('memo')
       .click()
       .get('p')
-      .should('contain', '메모 테스트');
+      .should('contain', '메모 테스트')
+      // 메모 삭제
+      .get('button')
+      .contains('X')
+      .click()
+      .get('button')
+      .contains('X')
+      .should('not.exist');
   });
 });

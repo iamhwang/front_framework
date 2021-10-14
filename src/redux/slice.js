@@ -119,10 +119,12 @@ export function requestMemoCreate() {
 }
 
 export function requestMemoDelete({ no }) {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
+    const { loginUser } = getState();
+
     const data = await requestMemoDeleteAPI({ no });
 
-    const memos = await requestMemosGetAPI({ no });
+    const memos = await requestMemosGetAPI({ no: loginUser.no });
     dispatch(setMemos({ memos }));
     return data;
   };
