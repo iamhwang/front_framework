@@ -8,9 +8,7 @@ import {
   requestMemoCreate,
 } from '../../redux/slice';
 
-import MemosContainer from './MemosContainer';
 import LogoutFormPage from '../presentational/LogoutFormPage';
-import { Container } from '../../css/style';
 
 export default function LogoutFormContainer() {
   const { id, memo } = useSelector((state) => ({
@@ -36,16 +34,13 @@ export default function LogoutFormContainer() {
   }
 
   return (
-    <Container>
-      <LogoutFormPage
-        id={id}
-        memo={memo}
-        onChange={handleChangeMemo}
-        onMemo={handleClickMemoButton}
-        onClick={handleClickLogoutButton}
-        onDelete={handleClickDeleteButton}
-      />
-      <MemosContainer />
-    </Container>
+    <LogoutFormPage
+      id={id}
+      memo={memo}
+      onChange={handleChangeMemo}
+      onMemo={handleClickMemoButton}
+      onClick={handleClickLogoutButton}
+      onDelete={handleClickDeleteButton}
+    />
   );
 }

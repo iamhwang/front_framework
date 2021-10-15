@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import LogoutFormContainer from './LogoutFormContainer';
+import HomePage from '../presentational/HomePage';
 import LoginFormContainer from './LoginFormContainer';
 
 export default function LoginContainer() {
@@ -13,7 +13,7 @@ export default function LoginContainer() {
   return (
     <>
       { accessToken
-        ? <LogoutFormContainer />
+        ? <HomePage />
         : <LoginFormContainer />}
     </>
   );
