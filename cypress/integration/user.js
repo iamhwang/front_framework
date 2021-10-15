@@ -35,15 +35,6 @@ describe('App Test', () => {
       .get('button')
       .contains('Delete')
       .click()
-      // 재로그인 시도
-      .get('#username')
-      .type('e2eTest')
-      .get('#password')
-      .type('password')
-      .get('button')
-      .contains('Login')
-      .click()
-      // 실패
       .get('button')
       .contains('Logout')
       .should('not.exist');

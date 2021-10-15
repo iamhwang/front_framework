@@ -11,26 +11,32 @@ describe('App Test', () => {
       .click()
       // 메모 입력 1
       .get('#memo')
-      .type('e2e 테스트')
+      .type('e2e 테스트 시작')
       .get('button')
       .contains('memo')
       .click()
       .get('p')
-      .should('contain', 'e2e 테스트')
+      .should('contain', 'e2e 테스트 시작')
       // 메모 입력 2
       .get('#memo')
-      .type('메모 테스트')
+      .type('메모 삭제 테스트')
       .get('button')
       .contains('memo')
       .click()
       .get('p')
-      .should('contain', '메모 테스트')
+      .should('contain', '메모 삭제 테스트')
       // 메모 삭제
       .get('button')
       .contains('X')
       .click()
+      .get('p')
+      .contains('메모 삭제 테스트')
+      .should('not.exist')
       .get('button')
       .contains('X')
+      .click()
+      .get('p')
+      .contains('e2e 테스트 시작')
       .should('not.exist');
   });
 });
